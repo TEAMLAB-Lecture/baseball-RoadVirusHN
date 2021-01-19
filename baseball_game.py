@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
-
 import random
-
-
 def get_random_number():
     # Helper Function - 지우지 말 것
     # 100부터 999까지 수를 램덤하게 반환함
@@ -289,6 +286,7 @@ def regame():
     elif is_no(user_input):
         return False
     else:
+        print('Wrong Input, Input again')
         return regame()
 
 

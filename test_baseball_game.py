@@ -5,7 +5,7 @@ import baseball_game as bg
 
 from mock import patch
 from io import StringIO
-
+# print(dir(bg))
 
 class TestBaseballGame(unittest.TestCase):
 
@@ -231,3 +231,15 @@ class TestBaseballGame(unittest.TestCase):
                     ball += 1
         result = [strikes, ball]
         return result
+
+
+test = TestBaseballGame()
+print(test.test_is_digit())
+print(test.test_is_between_100_and_999())
+print(test.test_is_duplicated_number())
+print(test.test_is_validated_number())
+print(test.test_get_not_duplicated_three_digit_number())
+print(test.test_get_strikes_or_ball())
+print(test.test_is_yes())
+print(test.test_is_no())
+print(test.test_main())
