@@ -266,7 +266,9 @@ def game():
 def play(user_input, random_number):
     user_input = None
     while not is_validated_number(user_input):
-        user_input = input('Input guess number: ')
+        user_input = input('Input guess number : ')
+        if user_input=='0':
+            return
         if is_validated_number(user_input):
             break
         else:
@@ -275,12 +277,14 @@ def play(user_input, random_number):
     if (stOrB == [3, 0]):
         if not regame(): return
     else:
-        print(f'Strikes: {stOrB[0]} , Balls : {stOrB[1]}')
+        print(f'Strikes : {stOrB[0]} , Balls : {stOrB[1]}')
         play(user_input, random_number)
 
 
 def regame():
-    user_input = input('You win, one more(Y/N)?')
+    user_input = input('You win, one more(Y/N) ?')
+    if user_input=='0':
+        return False
     if is_yes(user_input):
         return game()
     elif is_no(user_input):
