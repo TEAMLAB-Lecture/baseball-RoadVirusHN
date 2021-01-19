@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 import random
+import sys
+
+sys.setrecursionlimit(15010)
+
 def get_random_number():
     # Helper Function - 지우지 말 것
     # 100부터 999까지 수를 램덤하게 반환함
@@ -274,14 +278,14 @@ def play(user_input, random_number):
         else:
             print('Wrong Input, Input again')
     stOrB = get_strikes_or_ball(user_input, random_number)
+    print(f'Strikes : {stOrB[0]} , Balls : {stOrB[1]}')
     if (stOrB == [3, 0]):
-        if not regame(): return
+        if not regame(stOrB): return
     else:
-        print(f'Strikes : {stOrB[0]} , Balls : {stOrB[1]}')
         play(user_input, random_number)
 
 
-def regame():
+def regame(stOrB):
     user_input = input('You win, one more(Y/N) ?')
     if user_input=='0':
         return False
@@ -290,8 +294,8 @@ def regame():
     elif is_no(user_input):
         return False
     else:
-        print('Wrong Input, Input again')
-        return regame()
+        print(f'Wrong Input, Input again')
+        return regame(stOrB)
 
 
 def main():
