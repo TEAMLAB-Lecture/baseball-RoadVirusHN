@@ -278,7 +278,7 @@ def play(user_input, random_number):
     if (stOrB == [3, 0]):
         if not regame(): return
     else:
-        print(f'Strkies: {stOrB[0]} , Balls : {stOrB[1]}')
+        print(f'Strikes: {stOrB[0]} , Balls : {stOrB[1]}')
         play(user_input, random_number)
 
 
